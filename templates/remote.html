@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Powerpoint Remote</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <style>
+            body{
+                background: #222831;
+            }
+            #center {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            button{
+                color: #fff;
+                font-size: 36px;
+                background: #00adb5;
+                border-radius: 50%;
+                width: 85px;
+                height: 85px;
+                border: 0;
+                margin: 10px;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            button:active{
+                border: 2px solid #fff!important;
+            }
+            :focus-visible {
+                outline: none;
+            }
+            button>img {
+                width: 30px;
+            }
+        </style>
+        <div id="center">
+            <button onclick="fetch(window.location+'cmd/back');"><img src="static/arrow-left-solid.svg"></button>
+            <button onclick="fetch(window.location+'cmd/stop');"><img src="static/stop-solid.svg"></button>
+            <button onclick="fetch(window.location+'cmd/next');"><img src="static/arrow-right-solid.svg"></button>
+        </div>
+    </body>
+</html>

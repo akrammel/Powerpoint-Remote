@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Powerpoint Remote</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <style>
+            body{
+                background: #222831;
+                margin: 0;
+            }
+            #center {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            h1,h2{
+                color: #fff;
+                font-size: 16px;
+                font-family: sans-serif;
+            }
+            h1>span {
+                color: #00adb5;
+            }
+            h2{
+                font-size: 12px;
+            }
+        </style>
+        <div id="center">
+            <h2>Scan the QR Code on your phone to access the remote.</h2>
+            <div id="qrcode"></div>
+            <h1>URL: <span></span></h1>
+        </div>
+        <script src="static/qrcode.min.js"></script>
+        <script type="text/javascript">
+            document.querySelector("h1>span").innerHTML = window.location.origin;
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: window.location.origin,
+                width: 400,
+                height: 400,
+                colorDark : "#00adb5",
+                colorLight : "#222831",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        </script>
+    </body>
+</html>
